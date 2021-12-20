@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*************************************/
+/* Variables */
+
+:root {
+    --clr-cyan: hsl(179, 62%, 43%);
+    --clr-bright-yellow: hsl(71, 73%, 54%);
+    --clr-light-gray: hsl(204, 43%, 93%);
+    --clr-grayish-blue: hsl(218, 22%, 67%);
+    --clr-white-95: rgba(255, 255, 255, 0.95);
+
+    --font-karla: 'Karla', sans-serif;
+
+    --p-size: clamp(0.9rem, 4vw, 1rem);
+    --margin: 1.3rem;
+    --padding: clamp(1rem, 5vw, 3rem);
+}
+
+/*************************************/
+/* General Styles */
+
+body {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    background-color: var(--clr-light-gray);
+    font: 16px var(--font-karla);
+    padding: var(--padding);
+}
+
+main {
+    max-width: 700px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "intro" "subscription" "why-us";
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px hsla(217, 22%, 67%, 0.5);
+    overflow: hidden;
+}
+
+@media (min-width: 600px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "intro intro" "subscription why-us";
+    }
+}
+
+/*************************************/
+/* Intro */
+
+.intro {
+    grid-area: intro;
+    padding: var(--padding);
+}
+
+.intro-title {
+    color: var(--clr-cyan);
+    font-size: clamp(1.5rem, 5vw, 2rem);
+    margin-top: calc(var(--margin) / 2);
+}
+
+.intro-highlight {
+    color: hsl(71, 100%, 40%);
+    margin-block: var(--margin);
+}
+
+.intro-description {
+    color: var(--clr-grayish-blue);
+    font-size: var(--p-size);
+    line-height: 1.5rem;
+    margin-bottom: calc(var(--margin) / 2);
+}
+
+/* Subscription */
+.subscription {
+    grid-area: subscription;
+    background-color: var(--clr-cyan);
+    padding: var(--padding);
+}
+
+.title {
+    font-size: 1rem;
+    color: var(--clr-white-95);
+    margin-bottom: var(--margin);
+}
+
+.price {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.price > span {
+    font-size: var(--p-size);
+    color: hsl(204, 43%, 85%);
+}
+
+.description {
+    color: var(--clr-white-95);
+    font-size: var(--p-size);
+    margin-block: calc(var(--margin) / 3) calc(var(--margin) * 1.2);
+}
+
+.btn-sign-up {
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    font-size: var(--p-size);
+    color: var(--clr-white-95);
+    background-color: var(--clr-bright-yellow);
+    padding: calc(var(--margin) / 1.5);
+    margin-bottom: calc(var(--margin) / 3);
+}
+
+/* Why Us */
+.why-us {
+    grid-area: why-us;
+    background-color: hsl(179, 60%, 48%);
+    padding: var(--padding);
+}
+
+.list {
+    list-style: none;
+}
+
+.list li {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: var(--p-size);
+    margin-block: 0.3rem;
+}
+
+/*************************************/
+/* Attribution */
+
+.attribution {
+    text-align: center;
+    line-height: 1.5rem;
+}
+
+.attribution > a {
+    text-decoration: none;
+    color: var(--clr-cyan);
+}
+
+@media (hover) {
+    .attribution > a:hover,
+    .attribution > a:focus-within {
+        text-decoration: underline;
+    }
+}
