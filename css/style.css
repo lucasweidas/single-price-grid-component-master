@@ -87,6 +87,8 @@ main {
     grid-area: subscription;
     background-color: var(--clr-cyan);
     padding: var(--padding);
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
@@ -125,7 +127,7 @@ main {
     color: var(--clr-white-95);
     background-color: var(--clr-bright-yellow);
     padding: calc(var(--margin) / 1.5);
-    margin-bottom: calc(var(--margin) / 3);
+    margin-top: auto;
 }
 
 /* Why Us */
